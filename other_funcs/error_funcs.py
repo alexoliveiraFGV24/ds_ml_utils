@@ -71,3 +71,6 @@ def sse(y1: np.array, y2: np.array) -> float:
     0.020000000000000018
     """
     return np.sum((y1-y2)**2)
+
+def error_logistic(y:np.array, t:np.array) -> float:
+    return -np.sum(t * np.log(y) + (1 - t) * np.log(1 - y))
