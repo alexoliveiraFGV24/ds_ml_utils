@@ -1,4 +1,4 @@
-from other_funcs.error_funcs import rmse
+from utils.error_funcs import rmse
 import numpy as np
 from sklearn.linear_model import Lasso, Ridge, ElasticNet
 
