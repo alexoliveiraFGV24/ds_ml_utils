@@ -1,46 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def linear_regression_PI(X, y):
-    """
-    Implements a Linear Regression model using the Moore-Penrose pseudo-inverse
-    
-    Parameters
-    ----------
-    X : array
-        A 2-dimensional array with samples in the rows and features in the columns
-    y : array
-        An array with the same number of  as samples in X, the values to predict
-    
-    Returns
-    -------
-    w : array
-        Learnt parameters
-            
-    Notes
-    -----
-    The first column of X corresponds to the bias (`w_0`)
-    """
-    
-    # Converting to numpy arrays
-    X = X.to_numpy()
-    y = y.to_numpy()
-    
-    # Creating the phi matrix (just the normal data)
-    phi_matrix = X.copy()
-    
-    # Adding a column of ones to X
-    phi_matrix = np.hstack([np.ones((phi_matrix.shape[0], 1)), phi_matrix])
-    
-    # Calculating the pseudo-inverse
-    phi_matrix_pinv = np.linalg.inv(phi_matrix.T @ phi_matrix) @ phi_matrix.T
-    # phi_matrix_pinv = np.linalg.pinv(phi_matrix)
-
-    # Creating the learned parameters
-    w = phi_matrix_pinv @ y
-    
-    return w
-
 def linear_regression_SGD(X, y, lr=1e-8, epochs=10):
     """
     Implements a Linear Regression model using Stochastic Gradient Descent
