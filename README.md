@@ -8,8 +8,18 @@ Course: TECHNIQUES AND ALGORITHMS FOR DATA SCIENCE , Getulio Vargas Foundation.
 
 Professor: Alberto Paccanaro.
 
-## Cloning
+## Getting started
 
 ```bash
 git clone https://github.com/alexoliveiraFGV24/ds_ml_utils.git
+
+cd ds_ml_utils
+
+python -m venv venv
+
+source venv/bin/activate
+ou
+source venv/Scripts/activate
+
+pip install -r requirements.txt
 ```
